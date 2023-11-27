@@ -13,7 +13,7 @@ class TaskController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -21,10 +21,14 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Request $request)
+    public function index()
     {
-        // $tasks = $request->only['name','detail'];
-        // Task::create($tasks);
-        return view('todo.index');
+        return view('index');
+    }
+
+    public function add(Request $request)
+    {
+        $name = $request->input['name'];
+        return view('add', ['name' => $name]);
     }
 }
