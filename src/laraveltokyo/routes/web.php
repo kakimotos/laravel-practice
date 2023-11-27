@@ -18,3 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/todo', 'TaskController@index')->name('index');
+Route::post('/todo/add', 'TaskController@add')->name('add');
+
+
+
+
+
+
